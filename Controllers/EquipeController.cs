@@ -19,6 +19,11 @@ namespace Eplayers.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Cadastra equipe no arquivo CSV
+        /// </summary>
+        /// <param name="form">Arquivo onde serão cadastradas as informações</param>
+        /// <returns>Equipe cadastrada na Página Equipe</returns>
         public IActionResult Cadastrar(IFormCollection form){
             Equipe novaEquipe = new Equipe();
             novaEquipe.IdEquipe = Int32.Parse(form["IdEquipe"]);

@@ -14,6 +14,9 @@ namespace Eplayers.Models
 
         private const string PATH = "Database/equipe.csv";
 
+        /// <summary>
+        /// Método Construtor das Notícias, que cria o caminho/aarquivo csv, se ele não existir
+        /// </summary>
         public Noticias(){
             CreateFolderAndFile(PATH);
         }
@@ -21,17 +24,26 @@ namespace Eplayers.Models
         /// <summary>
         /// Cria nova Notícia
         /// </summary>
-        /// <param name="a"></param>       
+        /// <param name="a">Notícia que será criada</param>       
         public void Create(Noticias a)
         {
             string[] linha = {PrepararLinha(a)};
         }
-
+        
+        /// <summary>
+        /// Prepara a linha no formato CSV
+        /// </summary>
+        /// <param name="a">Notícia que será formatada</param>
+        /// <returns>Linha preparada</returns>
         private string PrepararLinha(Noticias a){
             // formata o texto em CSV
             return $"{a.IdNoticia};{a.Titulo};{a.Texto};{a.Imagem}";
         }
 
+        /// <summary>
+        /// Deleta uma notícia
+        /// </summary>
+        /// <param name="idNoticias">Id da Notícia que será deletada</param>
         public void Delete(int idNoticias)
         {
             //Lê todas as linhas
@@ -42,6 +54,10 @@ namespace Eplayers.Models
             RewriteCSV(PATH, linhas);
         }
 
+        /// <summary>
+        /// Lê todas as notícias
+        /// </summary>
+        /// <returns>Lista de Notícias</returns>
         public List<Noticias> ReadAll()
         {
             //Cria uma lista de noticias e lê suas linhas 
@@ -63,7 +79,11 @@ namespace Eplayers.Models
             }
             return noticias;
         }
-
+        
+        /// <summary>
+        /// Altera uma Notícia
+        /// </summary>
+        /// <param name="a">Notícia que será alterada</param>
         public void Update(Noticias a)
         {
             //Abre uma list da linhas do CSV e as lê

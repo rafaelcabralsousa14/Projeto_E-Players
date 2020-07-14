@@ -12,21 +12,37 @@ namespace Eplayers.Models
         public string Imagem { get; set; }
 
         private const string PATH = "Database/equipe.csv";
-
+        
+        /// <summary>
+        /// Método Construtor de Equipe, que cria o caminho/arquivo csv, se ele não existir
+        /// </summary>
         public Equipe(){
             CreateFolderAndFile(PATH);
         }
 
+        /// <summary>
+        /// Cria uma Equipe
+        /// </summary>
+        /// <param name="e">Equipe que será adicionada</param>
         public void Create(Equipe e)
         {
             string[] linha = {PrepararLinha(e)};
             File.AppendAllLines(PATH, linha);
         }
 
+        /// <summary>
+        /// Prepara a linha no formato CSV
+        /// </summary>
+        /// <param name="e">Equipe que será formatada</param>
+        /// <returns>Linha preparada</returns>
         private string PrepararLinha(Equipe e){
             return $"{e.IdEquipe};{e.Nome};{e.Imagem}";
         }
 
+        /// <summary>
+        /// Deleta uma Equipe
+        /// </summary>
+        /// <param name="idEquipe">Id da Equipe que será deletada</param>
         public void Delete(int idEquipe)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
@@ -54,7 +70,11 @@ namespace Eplayers.Models
             }
             return equipes;
         }
-
+        
+        /// <summary>
+        /// Altera uma Equipe
+        /// </summary>
+        /// <param name="e">Equipe que será alterada</param>
         public void Update(Equipe e)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
