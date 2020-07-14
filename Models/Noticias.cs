@@ -18,6 +18,10 @@ namespace Eplayers.Models
             CreateFolderAndFile(PATH);
         }
        
+        /// <summary>
+        /// Cria nova Notícia
+        /// </summary>
+        /// <param name="a"></param>       
         public void Create(Noticias a)
         {
             string[] linha = {PrepararLinha(a)};

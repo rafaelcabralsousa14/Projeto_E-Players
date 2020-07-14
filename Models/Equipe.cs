@@ -34,7 +34,11 @@ namespace Eplayers.Models
             linhas.RemoveAll(x => x.Split(";")[0] == idEquipe.ToString());
             RewriteCSV(PATH, linhas);
         }
-        
+
+        /// <summary>
+        /// Lê todos as linhas do csv
+        /// </summary>
+        /// <returns>Lista de Equipes</returns>        
         public List<Equipe> ReadAll(){
             List<Equipe> equipes = new List<Equipe>();
             string[] linhas = File.ReadAllLines(PATH);
