@@ -1,10 +1,10 @@
 @model Noticias
 @{
-    ViewData["Title"] = "Notícias";
+    ViewData["Title"] = "Noticias";
 }
 
 @* Formulário para Cadastrar as Notícias *@
-<form action="@Url.Action("Cadastrar")" method="post">
+<form action="@Url.Action("CadastrarNoticia")" method="post">
 
     <label for="IdNoticia">IdNotícia</label>
     <input type="text" name="IdNoticia" id="IdNoticia">

@@ -12,7 +12,7 @@ namespace Eplayers.Models
         public string Texto { get; set; }
         public string Imagem { get; set; }
 
-        private const string PATH = "Database/equipe.csv";
+        private const string PATH = "Database/noticias.csv";
 
         /// <summary>
         /// Método Construtor das Notícias, que cria o caminho/aarquivo csv, se ele não existir
@@ -28,6 +28,7 @@ namespace Eplayers.Models
         public void Create(Noticias a)
         {
             string[] linha = {PrepararLinha(a)};
+            File.AppendAllLines(PATH, linha);
         }
         
         /// <summary>

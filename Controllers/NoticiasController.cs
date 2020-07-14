@@ -12,10 +12,10 @@ namespace Eplayers.Controllers
 {
     public class NoticiasController : Controller
     {
-        Noticias noticiaModel = new Noticias();
+        Noticias noticiasModel = new Noticias();
 
         public IActionResult Index(){
-            ViewBag.Noticias = noticiaModel.ReadAll(); 
+            ViewBag.Noticias = noticiasModel.ReadAll(); 
             return View();
         }
 
@@ -24,18 +24,18 @@ namespace Eplayers.Controllers
         /// </summary>
         /// <param name="form">Arquivo onde serão cadastradas as informações</param>
         /// <returns>Notícia cadastrada na Página Notícias</returns>
-        public IActionResult Cadastrar(IFormCollection form){
+        public IActionResult CadastrarNoticia(IFormCollection forms){
             Noticias novaNoticia = new Noticias();
-            novaNoticia.IdNoticia = Int32.Parse(form["IdNoticia"]);
-            novaNoticia.Titulo = form["Titulo"];
-            novaNoticia.Texto = form["Texto"];
-            novaNoticia.Imagem = form["Imagem"];
+            novaNoticia.IdNoticia = Int32.Parse(forms["IdNoticia"]);
+            novaNoticia.Titulo = forms["Titulo"];
+            novaNoticia.Texto = forms["Texto"];
+            novaNoticia.Imagem = forms["Imagem"];
 
-            noticiaModel.Create(novaNoticia);
+            noticiasModel.Create(novaNoticia);
 
-            ViewBag.Noticias = noticiaModel.ReadAll();
+            ViewBag.Noticias = noticiasModel.ReadAll();
 
-            return LocalRedirect("~/Notícias");
+            return LocalRedirect("~/Noticias");
         }   
 
     }
