@@ -20526,6 +20526,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\rafac\\OneDrive\\Documentos\\SENAI\\Eplayers\\Views\\Noticias\\Index.cshtml",
+      "TargetPath": "Views\\Noticias\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\rafac\\OneDrive\\Documentos\\SENAI\\Eplayers\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"

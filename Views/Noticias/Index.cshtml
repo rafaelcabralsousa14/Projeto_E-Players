@@ -1,0 +1,46 @@
+@model Noticias
+@{
+    ViewData["Title"] = "Notícias";
+}
+
+@* Formulário para Cadastrar as Notícias *@
+<form action="@Url.Action("Cadastrar")" method="post">
+
+    <label for="IdNoticia">IdNotícia</label>
+    <input type="text" name="IdNoticia" id="IdNoticia">
+
+    <label for="Titulo">Título</label>
+    <input type="text" name="Titulo" id="Titulo">
+    
+    <label for="Texto">Texto</label>
+    <input type="text" name="Texto" id="Texto">
+    
+    <label for="Imagem">Imagem</label>
+    <input type="text" name="Imagem" id="Imagem">
+    
+    <button type="submit">Cadastrar</button>
+
+</form>
+
+@* Tabela que mostra todas as Notícias cadastradas *@
+<table class="table table-responsive table-striped">
+    <thead>
+        @* Título das colunas da tabela *@
+        <th>IdNotícia</th>
+        <th>Título</th>
+        <th>Texto</th>
+        <th>Imagem</th>
+    </thead>
+    <tbody>
+        @* Laço para colocar cada Notícia cadastrada na tabela *@
+        @foreach (var item in ViewBag.Noticias)
+        {
+            <tr>
+                <td>@item.IdNoticia</td>
+                <td>@item.Titulo</td>
+                <td>@item.Texto</td>
+                <td>@item.Imagem</td>
+            </tr>
+        }
+    </tbody>
+</table>
