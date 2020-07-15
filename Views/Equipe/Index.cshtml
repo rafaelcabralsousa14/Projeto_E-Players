@@ -38,7 +38,7 @@
                     <img src="img/Equipes/@item.Imagem" alt="Imagem da equipe @item.Nome">
                 </td>
                 <td>
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Equipe" asp-action="Escluir" asp-route-itemid="@item.IdEquipe">Excluir</a>
+                    <a asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@item.IdEquipe">Excluir</a>
                 </td>
             </tr>
         }

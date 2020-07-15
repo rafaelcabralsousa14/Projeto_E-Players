@@ -8,7 +8,7 @@ namespace Eplayers.Interfaces
         void Create(Noticias a);
         List<Noticias> ReadAll();
         void Update(Noticias a);
-        void Delete(int idNoticias);
+        void DeleteN(int idNoticias);
         
     }
 }

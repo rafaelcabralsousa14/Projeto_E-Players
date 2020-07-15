@@ -10,7 +10,7 @@ namespace Eplayers.Models
         public int IdNoticia { get; set; }
         public string Titulo { get; set; }
         public string Texto { get; set; }
-        public string Imagem { get; set; }
+        public string ImagemN { get; set; }
 
         private const string PATH = "Database/noticias.csv";
 
@@ -38,14 +38,14 @@ namespace Eplayers.Models
         /// <returns>Linha preparada</returns>
         private string PrepararLinha(Noticias a){
             // formata o texto em CSV
-            return $"{a.IdNoticia};{a.Titulo};{a.Texto};{a.Imagem}";
+            return $"{a.IdNoticia};{a.Titulo};{a.Texto};{a.ImagemN}";
         }
 
         /// <summary>
         /// Deleta uma notícia
         /// </summary>
         /// <param name="idNoticias">Id da Notícia que será deletada</param>
-        public void Delete(int idNoticias)
+        public void DeleteN(int idNoticias)
         {
             //Lê todas as linhas
             List<string> linhas = ReadAllLinesCSV(PATH);
@@ -74,7 +74,7 @@ namespace Eplayers.Models
                 noticia.IdNoticia = Int32.Parse(linha[0]);
                 noticia.Titulo = linha[1];
                 noticia.Texto = linha[2];
-                noticia.Imagem = linha[3];
+                noticia.ImagemN = linha[3];
                                 
                 noticias.Add(noticia);
             }
