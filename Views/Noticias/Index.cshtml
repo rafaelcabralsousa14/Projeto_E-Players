@@ -1,6 +1,6 @@
-@model Noticias
+@model Noticia
 @{
-    ViewData["Title"] = "Noticias";
+    ViewData["Title"] = "Noticia";
 }
 
 @* Formulário para Cadastrar as Notícias *@
@@ -15,8 +15,8 @@
     <label for="Texto">Texto</label>
     <input type="text" name="Texto" id="Texto">
     
-    <label for="Imagem">Imagem</label>
-    <input type="file" name="Imagem" id="Imagem">
+    <label for="ImagemN">Imagem</label>
+    <input type="file" name="ImagemN" id="ImagemN">
     
     <button type="submit">Cadastrar</button>
 
@@ -33,13 +33,18 @@
     </thead>
     <tbody>
         @* Laço para colocar cada Notícia cadastrada na tabela *@
-        @foreach (var item in ViewBag.Noticias)
+        @foreach (var itemN in ViewBag.Noticias)
         {
             <tr>
-                <td>@item.IdNoticia</td>
-                <td>@item.Titulo</td>
-                <td>@item.Texto</td>
-                <td>@item.ImagemN</td>
+                <td>@itemN.IdNoticia</td>
+                <td>@itemN.Titulo</td>
+                <td>@itemN.Texto</td>
+                <td>
+                    <img src="img/Noticias/@itemN.ImagemN" alt="Imagem da equipe @itemN.Titulo">
+                </td>
+                <td>
+                    <a asp-area="" asp-controller="Noticia" asp-action="ExcluirNoticia" asp-route-id="@itemN.IdNoticia">Excluir</a>
+                </td>
             </tr>
         }
     </tbody>

@@ -5,10 +5,10 @@ namespace Eplayers.Interfaces
 {
     public interface iNoticias
     {
-        void Create(Noticias a);
-        List<Noticias> ReadAll();
-        void Update(Noticias a);
-        void DeleteN(int idNoticias);
+        void Create(Noticia a);
+        List<Noticia> ReadAll();
+        void Update(Noticia a);
+        void Delete(int idNoticia);
         
     }
 }

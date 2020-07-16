@@ -5,7 +5,7 @@ using Eplayers.Interfaces;
 
 namespace Eplayers.Models
 {
-    public class Noticias : EplayersBase , iNoticias
+    public class Noticia : EplayersBase , iNoticias
     {
         public int IdNoticia { get; set; }
         public string Titulo { get; set; }
@@ -17,7 +17,7 @@ namespace Eplayers.Models
         /// <summary>
         /// Método Construtor das Notícias, que cria o caminho/aarquivo csv, se ele não existir
         /// </summary>
-        public Noticias(){
+        public Noticia(){
             CreateFolderAndFile(PATH);
         }
        
@@ -25,7 +25,7 @@ namespace Eplayers.Models
         /// Cria nova Notícia
         /// </summary>
         /// <param name="a">Notícia que será criada</param>       
-        public void Create(Noticias a)
+        public void Create(Noticia a)
         {
             string[] linha = {PrepararLinha(a)};
             File.AppendAllLines(PATH, linha);
@@ -36,7 +36,7 @@ namespace Eplayers.Models
         /// </summary>
         /// <param name="a">Notícia que será formatada</param>
         /// <returns>Linha preparada</returns>
-        private string PrepararLinha(Noticias a){
+        private string PrepararLinha(Noticia a){
             // formata o texto em CSV
             return $"{a.IdNoticia};{a.Titulo};{a.Texto};{a.ImagemN}";
         }
@@ -45,12 +45,12 @@ namespace Eplayers.Models
         /// Deleta uma notícia
         /// </summary>
         /// <param name="idNoticias">Id da Notícia que será deletada</param>
-        public void DeleteN(int idNoticias)
+        public void Delete(int idNoticia)
         {
             //Lê todas as linhas
             List<string> linhas = ReadAllLinesCSV(PATH);
             //Remove a notícia com o Id apresentado
-            linhas.RemoveAll(x => x.Split(";")[0] == idNoticias.ToString());
+            linhas.RemoveAll(x => x.Split(";")[0] == idNoticia.ToString());
             //Reescreve o CSV, sem a notícia removida
             RewriteCSV(PATH, linhas);
         }
@@ -59,10 +59,10 @@ namespace Eplayers.Models
         /// Lê todas as notícias
         /// </summary>
         /// <returns>Lista de Notícias</returns>
-        public List<Noticias> ReadAll()
+        public List<Noticia> ReadAll()
         {
             //Cria uma lista de noticias e lê suas linhas 
-            List<Noticias> noticias = new List<Noticias>();
+            List<Noticia> noticias = new List<Noticia>();
             string[] linhas = File.ReadAllLines(PATH);
             //Laço que lê o cada linha do CSV e o formata, tirando o ";"
             foreach (var item in linhas)
@@ -70,7 +70,7 @@ namespace Eplayers.Models
                 //Tira os ";"
                 string[] linha = item.Split(";");
                 //Cria uma notícia e pega cada atributo separadamente. Depois, adiciona essa notícia com os atributos separados
-                Noticias noticia = new Noticias();
+                Noticia noticia = new Noticia();
                 noticia.IdNoticia = Int32.Parse(linha[0]);
                 noticia.Titulo = linha[1];
                 noticia.Texto = linha[2];
@@ -85,7 +85,7 @@ namespace Eplayers.Models
         /// Altera uma Notícia
         /// </summary>
         /// <param name="a">Notícia que será alterada</param>
-        public void Update(Noticias a)
+        public void Update(Noticia a)
         {
             //Abre uma list da linhas do CSV e as lê
             List<string> linhas = ReadAllLinesCSV(PATH);
