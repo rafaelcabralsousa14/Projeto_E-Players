@@ -60,7 +60,7 @@ namespace Eplayers.Controllers
             return LocalRedirect("~/Equipe");
         }
         
-        [Route("{id}")]
+        [Route("Equipe/{id}")]
         public IActionResult Excluir(int id){
             equipeModel.Delete(id);
             ViewBag.Equipes = equipeModel.ReadAll();

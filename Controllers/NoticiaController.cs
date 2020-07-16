@@ -61,7 +61,7 @@ namespace Eplayers.Controllers
             return LocalRedirect("~/Noticia");
         }   
 
-        [Route("{id}")]
+        [Route("Noticia/{id}")]
         public IActionResult Excluir(int id){
             noticiaModel.Delete(id);
             ViewBag.Noticias = noticiaModel.ReadAll();

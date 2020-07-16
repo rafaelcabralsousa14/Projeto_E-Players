@@ -1,0 +1,64 @@
+@model Noticia
+@{
+    ViewData["Title"] = "Noticias";
+}
+
+<div class="titulo_pagina">
+    <h1>Cadastro de @ViewData["Title"]</h1>
+</div>
+
+@* Formulário para Cadastrar as Notícias *@
+<form class="cadastro" action="@Url.Action("CadastrarNoticia")" method="post" enctype="multipart/form-data">
+    <div class="campo">
+        <label for="IdNoticia">IdNotícia</label>
+        <input type="text" name="IdNoticia" id="IdNoticia">
+    </div>
+
+    <div class="campo">
+        <label for="Titulo">Título</label>
+        <input type="text" name="Titulo" id="Titulo">
+    </div>
+    
+    <div class="campo">
+    <label for="Texto">Texto</label>
+    <input type="text" name="Texto" id="Texto">
+    </div>
+
+    <div class="campo">
+    <label for="ImagemN">Imagem</label>
+    <input type="file" name="ImagemN" id="ImagemN">
+    </div>
+
+    <button class="gradient btn" type="submit">Cadastrar</button>
+
+</form>
+
+@* Tabela que mostra todas as Notícias cadastradas *@
+<table class="table table-responsive table-striped">
+    <thead>
+        @* Título das colunas da tabela *@
+        <th>IdNotícia</th>
+        <th>Título</th>
+        <th>Texto</th>
+        <th>Imagem</th>
+    </thead>
+    <tbody>
+        @* Laço para colocar cada Notícia cadastrada na tabela *@
+        @foreach (var itemN in ViewBag.Noticias)
+        {
+            <tr>
+                <td>@itemN.IdNoticia</td>
+                <td>@itemN.Titulo</td>
+                <td>@itemN.Texto</td>
+                <td>
+                    <img src="img/Noticia/@itemN.ImagemN" alt="Imagem da equipe @itemN.Titulo">
+                </td>
+                <td>
+                    <a asp-area="" asp-controller="Noticia" asp-action="Excluir" asp-route-id="@itemN.IdNoticia">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

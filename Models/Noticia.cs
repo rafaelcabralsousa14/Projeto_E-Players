@@ -12,7 +12,7 @@ namespace Eplayers.Models
         public string Texto { get; set; }
         public string ImagemN { get; set; }
 
-        private const string PATH = "Database/noticias.csv";
+        private const string PATH = "Database/noticia.csv";
 
         /// <summary>
         /// Método Construtor das Notícias, que cria o caminho/aarquivo csv, se ele não existir
@@ -44,7 +44,7 @@ namespace Eplayers.Models
         /// <summary>
         /// Deleta uma notícia
         /// </summary>
-        /// <param name="idNoticias">Id da Notícia que será deletada</param>
+        /// <param name="idNoticia">Id da Notícia que será deletada</param>
         public void Delete(int idNoticia)
         {
             //Lê todas as linhas

@@ -22,7 +22,6 @@ C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Eplaye
 C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Equipe\Index.cshtml.g.cs
 C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Noticias\Index.cshtml.g.cs
 C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -37,3 +36,4 @@ C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Eplaye
 C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Eplayers.pdb
 C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Eplayers.genruntimeconfig.cache
 C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Eplayers.csproj.CopyComplete
+C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Noticia\Index.cshtml.g.cs
