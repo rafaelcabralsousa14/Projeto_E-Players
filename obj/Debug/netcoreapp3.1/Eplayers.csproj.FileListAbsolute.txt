@@ -37,3 +37,4 @@ C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Eplaye
 C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Eplayers.genruntimeconfig.cache
 C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Eplayers.csproj.CopyComplete
 C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Noticia\Index.cshtml.g.cs
+C:\Users\rafac\OneDrive\Documentos\SENAI\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Jogador\Index.cshtml.g.cs
