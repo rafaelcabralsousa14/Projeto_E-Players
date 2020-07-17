@@ -1,0 +1,77 @@
+@model Jogador
+@{
+    ViewData["Title"] = "Jogadores";
+}
+
+<div class="titulo_pagina">
+    <h1>Cadastro de @ViewData["Title"]</h1>
+</div>
+
+@* Formulário para Cadastrar os Jogadores *@
+<form class="cadastro" action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data">
+    
+    <div class="campo">
+        <label for="IdJogador">IdJogador</label>
+        <input type="text" name="IdJogador" id="IdJogador">
+    </div>
+
+    <div class="campo">
+        <label for="IdEquipe">IdEquipe</label>
+        <input type="text" name="IdEquipe" id="IdEquipe">
+    </div>
+    
+    <div class="campo">
+        <label for="Nome">Nome</label>
+        <input type="text" name="Nome" id="Nome">
+    </div>
+
+    <div class="campo">
+        <label for="Nickname">Nickname</label>
+        <input type="text" name="Nickname" id="Nickname">
+    </div>
+    
+    <div class="campo">
+        <label for="Senha">Senha</label>
+        <input type="text" name="Senha" id="Senha">
+    </div>
+
+    <div class="campo">
+        <label for="ImagemPerfil">Imagem de Perfil</label>
+        <input type="file" name="ImagemPerfil" id="ImagemPerfil">
+    </div>
+
+    <button class="gradient btn" type="submit">Cadastrar</button>
+
+</form>
+
+@* Tabela que mostra todas as Notícias cadastradas *@
+<table class="table table-responsive table-striped">
+    <thead>
+        @* Título das colunas da tabela *@
+        <th>IdJogador</th>
+        <th>IdEquipe</th>
+        <th>Nome</th>
+        <th>Nickname</th>
+        <th>Imagem de Perfil</th>
+    </thead>
+    <tbody>
+        @* Laço para colocar cada Notícia cadastrada na tabela *@
+        @foreach (var item in ViewBag.Jogadores)
+        {
+            <tr>
+                <td>@item.IdJogador</td>
+                <td>@item.IdEquipe</td>
+                <td>@item.Nome</td>
+                <td>@item.Nickname</td>
+                <td>
+                    <img src="img/Jogadores/@item.ImagemPerfil" alt="Imagem de perfil do jogador @item.Nickname">
+                </td>
+                <td>
+                    <a asp-area="" asp-controller="Jogador" asp-action="Excluir" asp-route-id="@item.IdJogador">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

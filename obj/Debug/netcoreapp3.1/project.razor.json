@@ -20541,6 +20541,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\rafac\\OneDrive\\Documentos\\SENAI\\Eplayers\\Views\\Jogador\\Index.cshtml",
+      "TargetPath": "Views\\Jogador\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\rafac\\OneDrive\\Documentos\\SENAI\\Eplayers\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
